@@ -1,0 +1,310 @@
+{
+  "info": {
+    "_postman_id": "d63be714-95b2-4eff-84bd-58d332bd9272",
+    "name": "Springboot Parametros Strategy Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Coleccion para probar ABM de parametro1, parametro2 y parametro3."
+  },
+  "item": [
+    {
+      "name": "ABM Polimorfico",
+      "item": [
+        {
+          "name": "Crear Parametro tipo A",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipo\": \"A\",\n  \"nombre\": \"Pais\",\n  \"valor\": \"Argentina\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear Parametro tipo B",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipo\": \"B\",\n  \"nombre\": \"Sucursal\",\n  \"valor\": \"CENTRAL\",\n  \"campo1b\": \"Habilitada\",\n  \"campo2b\": \"Interior\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear Parametro tipo C",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipo\": \"C\",\n  \"nombre\": \"Perfil\",\n  \"campo1c\": \"ADMIN\",\n  \"campo2c\": \"SEGURIDAD\",\n  \"campo3c\": \"ALTO\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Actualizar Parametro por id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipo\": \"A\",\n  \"nombre\": \"Pais\",\n  \"valor\": \"Uruguay\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Consultas y baja unificadas",
+      "item": [
+        {
+          "name": "Listar tipo A",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros?tipo=A",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "A"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener por id tipo A",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros/1?tipo=A",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "A"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar tipo B",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros?tipo=B",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "B"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener por id tipo B",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros/1?tipo=B",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "B"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar tipo C",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros?tipo=C",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "C"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener por id tipo C",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros/1?tipo=C",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "C"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Eliminar por id tipo A",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/parametros/1?tipo=A",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "parametros",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "A"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Swagger UI",
+      "item": [
+        {
+          "name": "Abrir Swagger UI",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/swagger-ui/index.html",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "swagger-ui",
+                "index.html"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
