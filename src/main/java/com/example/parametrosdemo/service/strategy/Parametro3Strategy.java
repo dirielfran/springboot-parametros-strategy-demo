@@ -9,6 +9,7 @@ import com.example.parametrosdemo.exception.BadRequestException;
 import com.example.parametrosdemo.exception.NotFoundException;
 import com.example.parametrosdemo.model.ParametroTipo;
 import com.example.parametrosdemo.repository.Parametro3Repository;
+import com.example.parametrosdemo.util.NumericResourceId;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
@@ -36,7 +37,8 @@ public class Parametro3Strategy implements ParametroStrategy {
     }
 
     @Override
-    public ParametroResponse update(Long id, ParametroRequest request) {
+    public ParametroResponse update(String resourceId, ParametroRequest request) {
+        long id = NumericResourceId.parseLong(resourceId);
         ParametroCRequest typed = requireTipoC(request);
         validate(typed);
         Parametro3Entity entity = repository.findById(id)
@@ -46,7 +48,8 @@ public class Parametro3Strategy implements ParametroStrategy {
     }
 
     @Override
-    public ParametroResponse getById(Long id) {
+    public ParametroResponse getById(String resourceId) {
+        long id = NumericResourceId.parseLong(resourceId);
         return toResponse(repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("No existe Parametro3 con id " + id)));
     }
@@ -57,7 +60,8 @@ public class Parametro3Strategy implements ParametroStrategy {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(String resourceId) {
+        long id = NumericResourceId.parseLong(resourceId);
         if (!repository.existsById(id)) {
             throw new NotFoundException("No existe Parametro3 con id " + id);
         }

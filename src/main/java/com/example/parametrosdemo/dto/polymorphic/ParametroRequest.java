@@ -9,7 +9,8 @@ import jakarta.validation.constraints.NotBlank;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = ParametroARequest.class, name = "A"),
         @JsonSubTypes.Type(value = ParametroBRequest.class, name = "B"),
-        @JsonSubTypes.Type(value = ParametroCRequest.class, name = "C")
+        @JsonSubTypes.Type(value = ParametroCRequest.class, name = "C"),
+        @JsonSubTypes.Type(value = ParametroActividadRequest.class, name = "ACTIVIDAD")
 })
 public abstract class ParametroRequest {
 

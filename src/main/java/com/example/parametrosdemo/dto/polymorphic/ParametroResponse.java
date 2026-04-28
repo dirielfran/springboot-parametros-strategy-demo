@@ -7,7 +7,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = ParametroAResponse.class, name = "A"),
         @JsonSubTypes.Type(value = ParametroBResponse.class, name = "B"),
-        @JsonSubTypes.Type(value = ParametroCResponse.class, name = "C")
+        @JsonSubTypes.Type(value = ParametroCResponse.class, name = "C"),
+        @JsonSubTypes.Type(value = ParametroActividadResponse.class, name = "ACTIVIDAD")
 })
 public abstract class ParametroResponse {
 

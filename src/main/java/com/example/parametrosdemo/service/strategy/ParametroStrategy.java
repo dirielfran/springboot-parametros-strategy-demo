@@ -11,11 +11,11 @@ public interface ParametroStrategy {
 
     ParametroResponse create(ParametroRequest request);
 
-    ParametroResponse update(Long id, ParametroRequest request);
+    ParametroResponse update(String resourceId, ParametroRequest request);
 
-    ParametroResponse getById(Long id);
+    ParametroResponse getById(String resourceId);
 
     List<ParametroResponse> findAll();
 
-    void delete(Long id);
+    void delete(String resourceId);
 }

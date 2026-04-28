@@ -21,20 +21,20 @@ public class ParametroService {
         return getStrategy(request.tipo()).create(request);
     }
 
-    public ParametroResponse update(Long id, ParametroRequest request) {
-        return getStrategy(request.tipo()).update(id, request);
+    public ParametroResponse update(String resourceId, ParametroRequest request) {
+        return getStrategy(request.tipo()).update(resourceId, request);
     }
 
-    public ParametroResponse getById(ParametroTipo tipo, Long id) {
-        return getStrategy(tipo).getById(id);
+    public ParametroResponse getById(ParametroTipo tipo, String resourceId) {
+        return getStrategy(tipo).getById(resourceId);
     }
 
     public List<ParametroResponse> findAll(ParametroTipo tipo) {
         return getStrategy(tipo).findAll();
     }
 
-    public void delete(ParametroTipo tipo, Long id) {
-        getStrategy(tipo).delete(id);
+    public void delete(ParametroTipo tipo, String resourceId) {
+        getStrategy(tipo).delete(resourceId);
     }
 
     private ParametroStrategy getStrategy(ParametroTipo tipo) {
